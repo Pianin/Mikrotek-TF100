@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2025-08-19T17:24:32Z</date>
+    <groups>
+        <group>
+            <uuid>eb3dfc43ee4345a6b8f93bffd6172bf1</uuid>
+            <name>Broadcast FM</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>46b92373c38b4bb59755fb58972d059a</uuid>
+            <template>Mikrotek TF100</template>
+            <name>Mikrotek TF100</name>
+            <description>Базовый темлпейт по сбору состояния и текущих параметров с Mikrotek TF100</description>
+            <templates>
+                <template>
+                    <name>Generic SNMP</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Broadcast FM</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>2cd081cdd52b4ab49f7f289ff1a482c1</uuid>
+                    <name>mpCommon-PowerOutput</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.3.1.0</snmp_oid>
+                    <key>mikrotek.common.poweroutput</key>
+                    <delay>5m</delay>
+                    <units>watts</units>
+                    <description>The device output power in Watts</description>
+                </item>
+                <item>
+                    <uuid>42e3cb507f094003b07b5ee24d14c133</uuid>
+                    <name>mpCommon-PowerReflected</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.3.2.0</snmp_oid>
+                    <key>mikrotek.common.powerreflect</key>
+                    <delay>5m</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>watts</units>
+                    <description>The device reflected power in Watts</description>
+                </item>
+                <item>
+                    <uuid>66159fb44bf34116b60234fdcb361abf</uuid>
+                    <name>mpCommon-SWR</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.3.6.0</snmp_oid>
+                    <key>mikrotek.common.swr</key>
+                    <delay>5m</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>The standing wave ratio</description>
+                </item>
+                <item>
+                    <uuid>6469ada28a164f519d996e72c50e9492</uuid>
+                    <name>mpCommon-Temperature</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.3.4.0</snmp_oid>
+                    <key>mikrotek.common.temp</key>
+                    <delay>5m</delay>
+                    <units>°C</units>
+                    <description>The device temperature in degree Celsium (°C)</description>
+                </item>
+                <item>
+                    <uuid>ff14d17451de4ffbb823305ba35ce4a9</uuid>
+                    <name>mpInfo-HardwareVersion</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.7.0</snmp_oid>
+                    <key>mikrotek.info.hardwarever</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>Hardware version of device</description>
+                    <inventory_link>HARDWARE</inventory_link>
+                </item>
+                <item>
+                    <uuid>4e9162ab5c6246dfa7c7f8a9098bf441</uuid>
+                    <name>mpInfo-Manufacturer</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.3.0</snmp_oid>
+                    <key>mikrotek.info.manufacturer</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The device manufacturer name (Microtec)</description>
+                    <inventory_link>VENDOR</inventory_link>
+                </item>
+                <item>
+                    <uuid>f4be2abc473045408d5cfe99f124408f</uuid>
+                    <name>mpInfo-Name</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.4.0</snmp_oid>
+                    <key>mikrotek.info.name</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The device factory name.
+For ex:TF30, TTUD10 (388), etc.</description>
+                    <inventory_link>MODEL</inventory_link>
+                </item>
+                <item>
+                    <uuid>9fc7b60a17b741f8816e8c31463f586d</uuid>
+                    <name>mpInfo-SerialNumber</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.6.0</snmp_oid>
+                    <key>mikrotek.info.serial</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>Serial number:
+xxxxx
+xxxxxx
+Serial number / Device number:
+xxxxx/x
+xxxxxx/x</description>
+                    <inventory_link>SERIALNO_A</inventory_link>
+                </item>
+                <item>
+                    <uuid>0a97b81eb9a24c868e2140c373151138</uuid>
+                    <name>mpInfo-SoftwareVersion</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.8.0</snmp_oid>
+                    <key>mikrotek.info.softwarever</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>Software version of device</description>
+                    <inventory_link>SOFTWARE</inventory_link>
+                </item>
+                <item>
+                    <uuid>dfff8322ce2f4a7b8bbf57af3e4f0424</uuid>
+                    <name>mpInfo-Type</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.1.5.0</snmp_oid>
+                    <key>mikrotek.info.type</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <inventory_link>TYPE</inventory_link>
+                </item>
+                <item>
+                    <uuid>f4890faea85c403db282fff88ac704ec</uuid>
+                    <name>mpRadioFM-CarrierFrequency</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.5.1.0</snmp_oid>
+                    <key>mikrotek.radiofm.carrierfrnq</key>
+                    <delay>60m</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Mhz</units>
+                    <description>The carrier frequency in MHz</description>
+                </item>
+                <item>
+                    <uuid>b9c5be1be6b9423ebed50cce6391f70d</uuid>
+                    <name>mpRadioFM-RDSFrequency</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.5.5.0</snmp_oid>
+                    <key>mikrotek.radiofm.dsfrenq</key>
+                    <value_type>FLOAT</value_type>
+                    <units>kHz</units>
+                    <description>The RDS input frequency in kHz</description>
+                </item>
+                <item>
+                    <uuid>bc1093d88d624837adbe332acc0db4f9</uuid>
+                    <name>mpRadioFM-LeftOrMonoLevel</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.5.3.0</snmp_oid>
+                    <key>mikrotek.radiofm.leftmonolevel</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Volts</units>
+                    <description>The left channel or mono input level in Volts</description>
+                </item>
+                <item>
+                    <uuid>024e07a2b29648f0a93e263758ed49eb</uuid>
+                    <name>mpRadioFM-ModulationFrequency</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.5.2.0</snmp_oid>
+                    <key>mikrotek.radiofm.modulfrenq</key>
+                    <delay>60m</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>kHz</units>
+                    <description>The modulation input frequency in kHz</description>
+                </item>
+                <item>
+                    <uuid>b7eaada6b8ba494c92c9cd32332b2f05</uuid>
+                    <name>mpRadioFM-RightOrCSSLevel</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.5.4.0</snmp_oid>
+                    <key>mikrotek.radiofm.rightmonolevel</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Volts</units>
+                    <description>The right channel or mono input level in Volts</description>
+                </item>
+                <item>
+                    <uuid>81837cedb52f4c3792092c0edc3ddbf0</uuid>
+                    <name>mpStatus-AlarmCode</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.2.3.0</snmp_oid>
+                    <key>mikrotek.status.alarmcode</key>
+                    <description>Used only for TRAP messages</description>
+                </item>
+                <item>
+                    <uuid>df0ee20c7c5f49948ac04a2fe753952c</uuid>
+                    <name>mpStatus-Mode</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.2.1.0</snmp_oid>
+                    <key>mikrotek.status.mode</key>
+                    <description>The device operation mode:
+0 - Off (StandBy);
+1 - On;
+###To change set 0 or 1 (Only for rw community)###</description>
+                    <valuemap>
+                        <name>status-mode</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <uuid>f1194b1724234e8fa1027a109c9c6166</uuid>
+                    <name>mpStatus-Status</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.31735.2.2.0</snmp_oid>
+                    <key>mikrotek.status.status</key>
+                    <description>The device general status:
+0 - Ok (Normal);
+1 - Alarm;
+2 - Emergency off.</description>
+                    <valuemap>
+                        <name>status-status</name>
+                    </valuemap>
+                </item>
+            </items>
+            <valuemaps>
+                <valuemap>
+                    <uuid>b9c2e88ab1684b6a8a3b9e9d69e6d852</uuid>
+                    <name>status-mode</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>Off (StandBy)</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>On</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>fbb05d857fac4daa980e5d593defb773</uuid>
+                    <name>status-status</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>Ok (Normal)</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Alarm</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>Emergency off</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+            </valuemaps>
+        </template>
+    </templates>
+</zabbix_export>
